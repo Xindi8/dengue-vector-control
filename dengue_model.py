@@ -111,7 +111,7 @@ if __name__ == "__main__":
     err_v = np.abs(y[4:].sum(axis=0) - N_v).max() / N_v   # mosquito: S+E+I
     print(f"max relative error  N_h: {err_h:.1e},  N_v: {err_v:.1e}")
         # ---- prototype weekly new cases ----
-    phi = 0.06                                   # PROVISIONAL reporting fraction (phi; rho is reserved for spectral radius rho(K))
+    phi = 0.005                                   # PROVISIONAL reporting fraction (phi; rho is reserved for spectral radius rho(K))
     daily_new = PARAMS["eps_h"] * y[1]           # y[1] = E_h, new symptomatic cases per day
     weekly_new = daily_new[:t_end].reshape(n_weeks, 7).sum(axis=1)   # n_weeks weeks, 7 days each
     weekly_reported = phi * weekly_new

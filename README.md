@@ -24,7 +24,7 @@ dengue_rhs(t, y, params)   # use: solve_ivp(dengue_rhs, (0, t_end), y0, args=(pa
 | `kappa`, `eta` | 0, 0 (no intervention) | scenario input |
 | `I_h0`, `R_h0` | 10, 0 | E1 (fit) |
 | `E_h0, E_v0, I_v0` | 0 (inside `y0`) | E1, if needed |
-| `phi` | 0.06 | E1 (fit) |
+| `phi` | 0.005 (range 0.003–0.023, per infection, based on Fahad's E2 plan)  | E1 (fit) |
 | `n_weeks` | 52 | length of the data series |
 
 With the current values R0 ≈ 1.03, so almost no outbreak develops. This is expected until `m` is fitted.
