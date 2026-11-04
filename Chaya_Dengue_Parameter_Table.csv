@@ -1,0 +1,13 @@
+Parameter,Meaning,Starter value/range,Units,Calculation/notes,Role in project,Source/justification
+a0,Baseline mosquito biting rate,0.3–1.0,bites mosquito⁻¹ day⁻¹,Literature prior; temperature-specific formulation may replace constant,Fixed/prior,Dengue model systematic review; proposal uses a=a0(1−κη)
+b,Mosquito-to-human transmission probability per bite,0.10–0.75,dimensionless,Literature prior range,Fixed/prior,Dengue model systematic review
+c,Human-to-mosquito transmission probability per bite,0.50–1.00,dimensionless,Literature prior range,Fixed/prior,Dengue model systematic review
+m,Mosquito-to-human density ratio Nv/Nh,calibrate; do not assign without data,mosquito/person,Estimate/calibrate using ovitrap/vector evidence and population scale,Calibrated,Project proposal; PAHO PLISA and ovitrap surveys
+epsilon_h,Human latent/incubation progression rate,1/5.9 = 0.1695,day⁻¹,Mean intrinsic incubation 5.9 days; rate = reciprocal mean,Fixed/prior,"Chan & Johansson (2012), CDC Stacks"
+epsilon_v,Mosquito extrinsic incubation progression rate,1/EIP(T),day⁻¹,Temperature-dependent; e.g. EIP mean 15 d at 25°C → 0.0667/day; 6.5 d at 30°C → 0.1538/day,Temperature-dependent,Chan & Johansson (2012); WHO EIP 8–12 days at 25–28°C
+gamma_h,Human recovery rate,1/5 = 0.2000 (illustrative),day⁻¹,Use infectious period assumption 5 days; sensitivity range 3–14 days implies 0.0714–0.3333/day,Prior/assumption,Dengue model systematic review; clearly label assumed
+d_h,Human demographic turnover rate,1/(70×365) = 0.0000391 (illustrative),day⁻¹,Assuming 70-year life expectancy; replace with chosen demographic estimate,Prior/assumption,Dengue model review reports human life expectancy 50–70 years
+d_v,Mosquito mortality/turnover rate,1/14 = 0.07143 (illustrative),day⁻¹,Assuming 14-day adult lifespan; survival and lifespan definitions differ,Prior/assumption,Proposal cites ~2-week Aedes lifespan; verify source/definition
+kappa,Community protection compliance,0.20–0.60,dimensionless,Proposal-defined range,Scenario range,MATH574 proposal
+eta,Personal protection efficacy,0–1 (needs intervention-specific source),dimensionless,Do not choose one value without specifying protection/intervention,Scenario parameter,Proposal formula a=a0(1−κη); efficacy evidence needed
+rho,Reporting fraction,0.035–0.09,dimensionless,Proposal-defined range; observed cases = rho × model infections (depending observation model),Calibration/sensitivity,MATH574 proposal citing Noyd & Sharp (2015)
