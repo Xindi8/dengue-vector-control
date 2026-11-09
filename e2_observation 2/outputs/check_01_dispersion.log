@@ -1,0 +1,24 @@
+Distinct weeks in file 01: 1196; usable week-points (local mean >= 5) from the all-serotype and DENV-1 series together: 1314
+Lab-positive only (no estimated cases): k = 231
+                         series  weeks       k  var_to_mean_median
+     DENV-1 attributed, 2010/11     43 159.442               0.984
+          DENV-1 typed, 2010/11     42 230.224               1.100
+      All lab-positive, 2010/11     49 215.486               0.552
+All 23 seasons (total + DENV-1)   1314 292.789               0.658
+
+Pooled mean-variance by level (Var estimated from second differences):
+            weeks    mean     var  poisson_var  nb_var  var_to_mean
+bin                                                                
+(5, 10]       229    7.42    8.77         7.42    7.61         1.18
+(10, 20]      346   15.00   19.76        15.00   15.76         1.32
+(20, 40]      354   29.89   37.66        29.89   32.94         1.26
+(40, 80]      221   57.42   82.88        57.42   68.68         1.44
+(80, 160]     100  111.87  248.83       111.87  154.62         2.22
+(160, 400]     47  239.16  399.38       239.16  434.52         1.67
+
+Noise size after each transform (pooled seasons):
+     transform  var_low_5_20  var_high_80plus  high_over_low
+           raw        15.116          306.155         20.253
+          sqrt         0.325            0.498          1.531
+         log1p         0.109            0.015          0.142
+nb_vst (k=293)         0.300            0.334          1.114

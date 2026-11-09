@@ -1,0 +1,16 @@
+symbol,meaning,baseline,prior_low,prior_high,units,status,control_lever,source,dataset
+N_h,"Human population (San Juan-Carolina-Caguas MSA, 2010)",2347833,,,persons,fixed,,U.S. Census via CDC repo,05_demography
+m,Female mosquitoes per person; N_v = m*N_h,2,1,10,mosquitoes/person,fitted,larval control,Manore et al. 2014,02_calibration (fit); Otero 2025 ovitraps (relative)
+a,Biting rate per mosquito,0.35,0.25,1.0,1/day,fixed (PRCC),bite prevention,Zahid et al. 2023; Andraud et al. 2012,
+b,Mosquito-to-human transmission probability per bite,0.33,0.1,0.75,-,fixed (PRCC),Wolbachia,Manore et al. 2014; Andraud et al. 2012,
+c,Human-to-mosquito transmission probability per bite,0.33,0.1,1.0,-,fixed (PRCC),Wolbachia,Manore et al. 2014; Andraud et al. 2012,
+lambda_h,ab/N_h,4.919e-08,,,1/(mosquito*day),derived,,,
+lambda_v,ac/N_h,4.919e-08,,,1/(person*day),derived,,,
+eps_h,Intrinsic incubation rate (1/latent period),0.1695,0.1,0.3333,1/day,fixed (PRCC),,Chan & Johansson 2012,
+eps_v,Extrinsic incubation rate at 27 C,0.0935,0.0667,0.125,1/day,fixed (PRCC),,Chan & Johansson 2012,04_temperature
+gamma_h,Human recovery rate (1/infectious period),0.2,0.0833,0.5,1/day,fixed (PRCC),,Gubler 1998; Manore et al. 2014,
+d_h=b_h,Human birth = death rate (1/life expectancy 78.7 y),3.48e-05,,,1/day,fixed,,PAHO Core Indicators 2026,05_demography
+d_v=b_v,Mosquito emergence = death rate (1/adult lifespan),0.0714,0.0238,0.25,1/day,fixed (PRCC),,Manore et al. 2014; Andraud et al. 2012; Brady et al. 2013,
+phi,Reporting fraction per infection (observation model),,0.003,0.023,-,fitted (s0 fixed per scenario),,"Bhatt et al. 2013; Wang et al. 2015; Noyd & Sharp 2015 (1 in 11-28 symptomatic cases reported, 1990s)",02_calibration
+s0,Initial susceptible fraction S_h(0)/N_h for the epidemic serotype,,,,-,fitted,,prior immunity (seroprevalence) unknown,02_calibration
+I_h0,Initial infectious humans,,,,persons,fitted,,first weeks of 02_calibration,02_calibration

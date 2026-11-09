@@ -1,0 +1,5 @@
+transform,var_low_5_20,var_high_80plus,high_over_low
+raw,15.116,306.155,20.253
+sqrt,0.325,0.498,1.531
+log1p,0.109,0.015,0.142
+nb_vst (k=293),0.3,0.334,1.114

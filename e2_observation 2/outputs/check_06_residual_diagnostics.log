@@ -1,0 +1,7 @@
+sqrt_residual_variance       0.687
+noise_only_expectation       about 0.30-0.50 (check 1)
+lag1_autocorrelation         0.195
+runs_test_z                  -1.111
+pearson_dispersion           3.652
+weeks_model_too_low_1_20     9
+weeks_model_too_low_21_52    18

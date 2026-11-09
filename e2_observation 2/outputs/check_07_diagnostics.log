@@ -1,0 +1,55 @@
+Default diff_step, res.jac as returned (synthetic, all three free): condition number 7.03, corr(s0, m) -0.923, flagged pairs 0
+
+=== synthetic | A: s0 fixed at 0.4 | estimates [1.00211e+01 5.00000e-03]
+n = 52, p = 2, RSS = 22.921, sigma2 = 0.458
+AIC = -38.599, AICc = -38.354, BIC = -34.696
+condition number = 1.67
+standard errors: log_m 0.0114, log_phi 0.0183
+correlation matrix:
+             log_m  log_phi
+log_m        1.000    0.193
+log_phi      0.193    1.000
+residuals: lag-1 autocorrelation +0.140, runs test z -0.11
+
+=== synthetic | B: s0, m, phi free | estimates [4.4280e-01 9.0617e+00 4.6000e-03]
+n = 52, p = 3, RSS = 22.913, sigma2 = 0.468
+AIC = -36.615, AICc = -36.115, BIC = -30.761
+condition number = 948
+standard errors: log_s0 4.51, log_m 4.46, log_phi 4.4
+correlation matrix:
+            log_s0    log_m  log_phi
+log_s0       1.000   -1.000   -1.000
+log_m       -1.000    1.000    1.000
+log_phi     -1.000    1.000    1.000
+NOT SEPARATELY IDENTIFIABLE (|corr| >= 0.95): log_s0-log_m -1.000; log_s0-log_phi -1.000; log_m-log_phi +1.000
+residuals: lag-1 autocorrelation +0.140, runs test z -0.11
+
+=== real 2010/11 (preview) | A: s0 fixed at 0.4 | estimates [9.8088e+00 4.8000e-03]
+n = 52, p = 2, RSS = 36.472, sigma2 = 0.729
+AIC = -14.444, AICc = -14.199, BIC = -10.541
+condition number = 1.66
+standard errors: log_m 0.0148, log_phi 0.0236
+correlation matrix:
+             log_m  log_phi
+log_m        1.000    0.177
+log_phi      0.177    1.000
+residuals: lag-1 autocorrelation +0.196, runs test z -1.11
+
+=== real 2010/11 (preview) | B: s0, m, phi free | estimates [4.37000e-02 8.95926e+01 3.76000e-02]
+n = 52, p = 3, RSS = 31.428, sigma2 = 0.641
+AIC = -20.185, AICc = -19.685, BIC = -14.331
+condition number = 46.1
+standard errors: log_s0 0.286, log_m 0.289, log_phi 0.24
+correlation matrix:
+            log_s0    log_m  log_phi
+log_s0       1.000   -0.999   -0.996
+log_m       -0.999    1.000    0.996
+log_phi     -0.996    0.996    1.000
+NOT SEPARATELY IDENTIFIABLE (|corr| >= 0.95): log_s0-log_m -0.999; log_s0-log_phi -0.996; log_m-log_phi +0.996
+residuals: lag-1 autocorrelation +0.086, runs test z -0.80
+
+                  data                fit  p     rss      aic     aicc  condition_number  corr_m_phi  corr_s0_m  corr_s0_phi  flagged
+             synthetic A: s0 fixed at 0.4  2 22.9207 -38.5985 -38.3537            1.6659      0.1931        NaN          NaN        0
+             synthetic B: s0, m, phi free  3 22.9134 -36.6151 -36.1151          947.9628      1.0000    -1.0000      -1.0000        3
+real 2010/11 (preview) A: s0 fixed at 0.4  2 36.4723 -14.4440 -14.1991            1.6569      0.1775        NaN          NaN        0
+real 2010/11 (preview) B: s0, m, phi free  3 31.4277 -20.1847 -19.6847           46.0980      0.9956    -0.9987      -0.9958        3

@@ -1,0 +1,21 @@
+(a) First 8 weeks, expected cases:
+ week  data  naive_start  growth_mode_start
+    1  39.7         50.7               39.1
+    2  49.8         38.1               46.9
+    3  52.4         53.1               56.0
+    4  56.5         68.0               66.5
+    5  73.4         80.9               78.6
+    6  88.9         94.7               92.2
+    7 134.7        110.1              107.2
+    8 116.8        126.9              123.4
+
+(b) Truth: s0=0.4, m=10.0, phi=0.005, m*s0=4.00, phi*s0=0.0020, R0=2.30, Reff=1.455
+          m_median  phi_median    m_s0  phi_s0    Reff      R0  cost_median
+s0_fixed                                                                   
+0.2        19.8783      0.0098  3.9757   0.002  1.4503  3.2431       8.7462
+0.4         9.9824      0.0050  3.9929   0.002  1.4535  2.2982       8.5474
+0.8         5.0404      0.0026  4.0323   0.002  1.4606  1.6330       8.6971
+
+Cost difference vs the true s0 (same data, 20 replicates):
+  s0 fixed at 0.2: median +0.1382, range -0.1673 to +0.4950
+  s0 fixed at 0.8: median +0.0384, range -0.2122 to +0.2733

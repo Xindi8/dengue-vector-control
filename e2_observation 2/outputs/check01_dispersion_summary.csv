@@ -1,0 +1,5 @@
+series,weeks,k,var_to_mean_median
+"DENV-1 attributed, 2010/11",43,159.442,0.984
+"DENV-1 typed, 2010/11",42,230.224,1.1
+"All lab-positive, 2010/11",49,215.486,0.552
+All 23 seasons (total + DENV-1),1314,292.789,0.658

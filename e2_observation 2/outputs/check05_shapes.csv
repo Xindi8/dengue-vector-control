@@ -1,0 +1,5 @@
+series,weeks,total,peak,peak_week_start,weeks_at_or_above_half_peak,note
+"San Juan 2010/11, DENV-1 attributed",52,3864,228.6,2010-08-13,15,calibration target
+"San Juan 2010/11, all lab-positive",52,4696,277.0,2010-08-13,14,all serotypes
+"San Juan 2012/13, DENV-1 attributed",52,4091,185.8,2013-01-01,18,cross-season holdout
+"Puerto Rico 2024, OpenDengue total",52,6088,217.0,2024-09-29,30,"island-wide, all serotypes, 52 epi weeks"

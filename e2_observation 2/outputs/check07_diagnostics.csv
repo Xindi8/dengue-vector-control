@@ -1,0 +1,5 @@
+data,fit,p,rss,aic,aicc,condition_number,corr_m_phi,corr_s0_m,corr_s0_phi,flagged
+synthetic,A: s0 fixed at 0.4,2,22.92071,-38.59855,-38.35365,1.66586,0.19314,,,0
+synthetic,"B: s0, m, phi free",3,22.91343,-36.61506,-36.11506,947.96275,0.99999,-1.0,-0.99999,3
+real 2010/11 (preview),A: s0 fixed at 0.4,2,36.47227,-14.44396,-14.19906,1.65694,0.17747,,,0
+real 2010/11 (preview),"B: s0, m, phi free",3,31.42775,-20.18473,-19.68473,46.09804,0.99565,-0.99873,-0.99578,3

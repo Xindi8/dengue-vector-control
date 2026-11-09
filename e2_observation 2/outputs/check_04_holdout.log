@@ -1,0 +1,19 @@
+                  data  cutoff  Reff_fit  peak_week_err  peak_rel_err  test_total_rel_err  season_total_rel_err  rmse_sqrt  baseline_peak_week_err  baseline_test_total_rel_err  baseline_rmse_sqrt  test_weeks_observed_total
+             synthetic       8     1.628             -6        -0.527              -0.760                -0.650      5.272                      -6                        0.303               5.998                     3359.0
+             synthetic      12     1.495              1        -0.141              -0.169                -0.116      1.043                      -4                        1.581               8.476                     2697.0
+             synthetic      16     1.491              0         0.000              -0.104                -0.049      0.754                       0                        3.040               9.953                     1840.0
+             synthetic      20     1.489              0         0.000              -0.130                -0.036      0.734                       0                        4.279               9.540                     1070.0
+             synthetic      26     1.473              0         0.000              -0.048                -0.005      0.610                       0                        5.223               6.844                      376.0
+real 2010/11 (preview)       8     1.400             31       114.839             134.640               113.308     96.960                      -9                        0.702               6.327                     3251.8
+real 2010/11 (preview)      12     1.378              7         0.914               2.372                 1.605      7.953                      -4                        1.969               8.730                     2614.4
+real 2010/11 (preview)      16     1.423              0         0.000               0.231                 0.108      1.268                       0                        3.286               9.868                     1809.4
+real 2010/11 (preview)      20     1.427              0         0.000               0.163                 0.045      1.036                       0                        5.040               9.944                     1058.1
+real 2010/11 (preview)      26     1.448              0         0.000              -0.085                -0.009      0.991                       0                        3.889               5.650                      407.9
+
+Forecast from week 12 with different fixed s0 (real data):
+  s0=0.2: m=17.92 phi=0.02560 R0=3.08 Reff=1.377 forecast peak week=23, peak=427.9, season total=9734
+  s0=0.4: m=8.98 phi=0.01369 R0=2.18 Reff=1.378 forecast peak week=23, peak=437.6, season total=10058
+  s0=0.8: m=4.50 phi=0.00723 R0=1.54 Reff=1.380 forecast peak week=23, peak=444.7, season total=10373
+  fit to week 12: largest weekly difference between s0 = 0.2/0.4/0.8 forecasts 14.4%; test-window totals differ by at most 3.7%
+  fit to week 16: largest weekly difference between s0 = 0.2/0.4/0.8 forecasts 8.5%; test-window totals differ by at most 2.1%
+  fit to week 26: largest weekly difference between s0 = 0.2/0.4/0.8 forecasts 15.0%; test-window totals differ by at most 1.9%
