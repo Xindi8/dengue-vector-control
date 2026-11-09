@@ -1,0 +1,13 @@
+file,bytes,sha256,source
+raw/cdc/Dengue_data_README.md,1478,1fc988a6966e3265f64c5c68e1cf18eaab86699d5b928364ebeb3e9c012f2a53,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/Environmental_data_README.md,5710,38c16765c29f2afdad44320ba89543281a93019d89803a80bb9385585d198572,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/Population_data_README.md,740,31a83e2357fb4b83cff5c9ffc90f70e0c0287ac37599198103e588f9e8bb3734,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/SOURCE_COMMIT.txt,52,75ddf5fde4b56b1a8ea0e22bd24a1621d9e0e143a11b3885df208e9a614256b6,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/SanJuanRQW00011641.csv,1102809,58fd5faed9ed46f97c91317e816e732a80a4e557bbb5987e994e63e56874dafc,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/san_juan_metadata.md,3122,06f365c1604c98f89d7ec52fbcb2d314e4002747190c2e165810b0bab01ee930,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/san_juan_population_data.csv,247,7d091e23be32ad53cda6d32c8a2beec9a6bb1c80ce61b292b8eff96fbb48ae7f,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/cdc/san_juan_testing_data.csv,52409,df20edb176a65ace3e6a75844a4d0a87e300d605e277e307d9afecf45a5f2a09,https://github.com/cdcepi/dengue-forecasting-project-2015
+raw/opendengue/National_extract_V1_3_PUERTO_RICO.csv,55634,789fcee3068a5d1c55766d40adf60e4db90a030c81d165f281a941f02733a0ca,https://github.com/OpenDengue/master-repo (data release V1.3)
+raw/opendengue/SOURCE_COMMIT.txt,52,316bb6c06ee9419297f12d19308c07b520e740c9a9caf2ff7a11dc3122857bfa,https://github.com/OpenDengue/master-repo (data release V1.3)
+raw/opendengue/Temporal_extract_PAHO_V1_3_PUERTO_RICO.csv,77807,f17a1afdd621c8c3be1798edcbc7675adbcee756a20e95a18f203c0272ee7b56,https://github.com/OpenDengue/master-repo (data release V1.3)
+raw/paho/PAHO_Core_Indicators_2026_PRI_subset.csv,230442,cb57d3a3bbfddea6b0b46498f366f424d9af934be3310a5a8bdd1cfa240a10a1,https://opendata.paho.org/en/core-indicators (release of 13 Apr 2026)
