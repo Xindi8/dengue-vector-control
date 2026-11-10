@@ -29,7 +29,7 @@ Ranges are for sensitivity analysis only.
 | `phi` | 0.005 | **fitted by E1** (range 0.003–0.023, per infection) |
 | `s0` | 0.4 | scenario (0.2 and 0.6 as alternatives) |
  
-`validate_rhs(dengue_rhs, PARAMS)` from `e2_observation/observation.py` returns `[]` (checked 9 Nov with both the old provisional and the AB parameters).
+`validate_rhs(dengue_rhs, PARAMS)` from `e2_observation 2/observation.py` returns `[]` (checked 9 Nov with both the old provisional and the AB parameters).
  
 The demo in `__main__` still starts from 10 cases with s0 = 1 and m = 2 (R0 ≈ 1.03), so it shows almost no outbreak.
 For real runs, use E2's `initial_state` / `expected_cases` and E1's fitted m and phi.
