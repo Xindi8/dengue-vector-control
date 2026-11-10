@@ -7,20 +7,20 @@ import numpy as np
 STATE_NAMES = ["S_h", "E_h", "I_h", "R_h", "S_v", "E_v", "I_v"]
 
 
-# PROVISIONAL values (proposal Table 1 baselines) — replace after B01/C01
+# Baseline values from the AB package (data_and_literature/parameters/parameters.csv)
 PARAMS = {
-    "N_h": 2.35e6,       # human population
-    "m": 2.0,            # mosquitoes per human, N_v = m * N_h
-    "a0": 0.35,          # baseline biting rate (1/day)
-    "kappa": 0.0,        # community compliance with personal protection, in [0,1] (0 = no intervention)
-    "eta": 0.0,          # protection efficacy per contact, in [0,1] (0 = no intervention)
-    "b": 0.33,           # mosquito -> human transmission prob per bite
-    "c": 0.33,           # human -> mosquito transmission prob per bite
-    "eps_h": 1 / 5.9,    # intrinsic incubation rate (1/day)
-    "eps_v": 1 / 10.7,   # extrinsic incubation rate (1/day)
-    "gamma_h": 1 / 5.0,  # human recovery rate (1/day)
-    "d_h": 3.5e-5,       # human birth = death rate (1/day)
-    "d_v": 1 / 14.0,     # mosquito birth = death rate (1/day)
+    "N_h": 2347833,      # human population, San Juan metro 2010 (US Census, CDC repo)
+    "m": 2.0,            # mosquitoes per human, N_v = m * N_h -- FITTED by E1 (range 1-20; ~9.8 at s0 = 0.4)
+    "a0": 0.35,          # baseline biting rate (1/day), Zahid et al. 2023
+    "kappa": 0.0,        # compliance with personal protection (0 in calibration; scenarios 0.2-0.6)
+    "eta": 0.0,          # protection efficacy per contact (0 in calibration; scenarios 0.3-0.9)
+    "b": 0.33,           # mosquito -> human transmission prob per bite, Manore et al. 2014
+    "c": 0.33,           # human -> mosquito transmission prob per bite, Manore et al. 2014
+    "eps_h": 0.169492,   # intrinsic incubation rate (1/day), 1/5.9 d, Chan & Johansson 2012
+    "eps_v": 0.093458,   # extrinsic incubation rate (1/day) at San Juan's mean 27 C, Chan & Johansson 2012
+    "gamma_h": 0.2,      # human recovery rate (1/day), 1/5 d, Gubler 1998
+    "d_h": 3.4781e-05,   # human birth = death rate (1/day), 1/(78.717 y), PAHO 2010
+    "d_v": 0.071429,     # mosquito birth = death rate (1/day), 1/14 d, Manore et al. 2014
 }
 
 
