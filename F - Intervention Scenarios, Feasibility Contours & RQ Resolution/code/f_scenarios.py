@@ -4,8 +4,8 @@ from f_model import anchored_start, apply_controls, weekly_cases, r0, WEEK_EDGES
 
 OBSERVED = pd.read_csv("../inputs/e1_fit_curves.csv")["observed"].values
 ETA, Q = 0.5, 0.9
-S0_LEVELS = (0.2, 0.4, 0.6)
-REF_S0 = 0.4
+S0_LEVELS = (0.39, 0.5, 0.64)
+REF_S0 = 0.5
 
 PACKAGES = [
     ("S0", "Baseline", 0.0, 0.0, 0.0),
@@ -13,7 +13,7 @@ PACKAGES = [
     ("S2", "Moderate spraying", 0.0, 0.4, 0.0),
     ("S3", "Proposal's combination", 0.35, 0.4, 0.0),
     ("S4", "Max feasible, no Wolbachia", 0.6, 0.85, 0.0),
-    ("S5", "Balanced package", 0.35, 0.75, 0.0),
+    ("S5", "Balanced package", 0.35, 0.65, 0.0),
     ("S6", "Everything at its ceiling", 0.6, 0.85, 0.8),
 ]
 
@@ -21,9 +21,9 @@ EDGES_2Y = np.concatenate([WEEK_EDGES, 365 + 7 * np.arange(1, 53)])
 
 
 def run(s0, kappa, delta, p_w, eta=ETA, q=Q, edges=WEEK_EDGES):
-    p, y0, phi = anchored_start(s0, OBSERVED[:3].sum())
+    p, y0, phi = anchored_start(s0, OBSERVED)
     pc, yc = apply_controls(p, y0, kappa, delta, p_w, eta, q)
-    mu, _ = weekly_cases(pc, yc, phi, edges)
+    mu = weekly_cases(pc, yc, phi, edges)
     return pc, mu
 
 

@@ -4,6 +4,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
 FIT_RESULTS = "../inputs/e1_fit_results.csv"
+F_FIT_RESULTS = "../outputs/f_fit_results.csv"
 
 ETA = 0.5
 Q_BLOCK = 0.9
@@ -11,15 +12,16 @@ P_W_LEVELS = [0.0, 0.4, 0.8]
 KAPPA_MAX = 0.6
 DELTA_MAX = 0.85
 PROPOSAL = (0.35, 0.40)
-REF_S0 = 0.4
-BAND_S0 = (0.29, 0.44)
-SENS_S0 = (0.2, 0.6)
+REF_S0 = 0.5
+BAND_S0 = (0.39, 0.64)
 
 
-def load_fit(path=FIT_RESULTS):
+def load_fit(path=FIT_RESULTS, f_path=F_FIT_RESULTS):
     data = np.genfromtxt(path, delimiter=",", names=True)
     r_eff = float(np.mean(data["R_eff"]))
-    r0 = {round(float(row["s0"]), 2): float(row["R0"]) for row in data}
+    r0 = {}
+    for rows in (data, np.genfromtxt(f_path, delimiter=",", names=True)):
+        r0.update({round(float(row["s0"]), 2): float(row["R0"]) for row in rows})
     return r_eff, r0
 
 
@@ -58,17 +60,11 @@ for i, p_w in enumerate(P_W_LEVELS):
         ax.contourf(K, D, band.astype(float), levels=[0.5, 1.5], colors=["#c9b8e8"], alpha=0.8, zorder=1)
 
     handles = []
-    for s0 in SENS_S0:
-        note = boundary(ax, r_controlled(r0_at(s0, r0, r_eff), K, D, p_w),
-                        colors="0.55", linestyles=":", linewidths=1.6, zorder=2)
-        handles.append(Line2D([], [], color="0.55", ls=":", lw=1.6,
-                              label=f"R$_0$, s$_0$ = {s0} (sensitivity){note}"))
-
     note = boundary(ax, r_controlled(r0_at(REF_S0, r0, r_eff), K, D, p_w),
                     colors="#6a3d9a", linestyles="-", linewidths=2.6, zorder=3)
     handles.insert(0, Line2D([], [], color="#6a3d9a", lw=2.6,
-                             label=f"R$_0$, s$_0$ = {REF_S0} (E1 reference){note}"))
-    handles.insert(1, Patch(facecolor="#c9b8e8", label=f"R$_0$ = 1 range for s$_0$ = {BAND_S0[0]}–{BAND_S0[1]} (evidence)"
+                             label=f"R$_0$, s$_0$ = {REF_S0} (headline){note}"))
+    handles.insert(1, Patch(facecolor="#c9b8e8", label=f"R$_0$ = 1 range for s$_0$ = {BAND_S0[0]}–{BAND_S0[1]} (E2's range)"
                             + ("" if band.any() else ": none on grid")))
 
     note = boundary(ax, r_controlled(r_eff, K, D, p_w),
@@ -82,7 +78,7 @@ for i, p_w in enumerate(P_W_LEVELS):
                        label=f"Proposal: κ = {PROPOSAL[0]}, δ = {PROPOSAL[1]}")]
 
     ax.set_title(f"Threshold R = 1, Wolbachia coverage p$_w$ = {p_w:.1f}\n"
-                 f"(η = {ETA}, q = {Q_BLOCK}; R$_0$ and R$_{{eff}}$ from E1's 2010/11 fit)")
+                 f"(η = {ETA}, q = {Q_BLOCK}; R$_0$ and R$_{{eff}}$ from the 2010/11 fits)")
     ax.set_xlabel("Compliance κ")
     ax.set_ylabel("Adult mosquito reduction δ")
     ax.set_xlim(0, 1)
