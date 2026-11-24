@@ -41,7 +41,7 @@ def eip_days(temp_c):
 def cdc_week_of_year(dates):
     """Week number used in the CDC San Juan files: 7-day steps from 1 January, with
     week 52 taking the extra 1-2 days at the end of December."""
-    doy = pd.DatetimeIndex(dates).dayofyear.to_numpy()
+    doy = pd.DatetimeIndex(dates).day_of_year.to_numpy()
     return np.minimum(52, (doy - 1) // 7 + 1)
 
 
@@ -50,7 +50,7 @@ def mmwr_week(start):
     mid = start + pd.Timedelta(days=3)
     year = mid.year
     jan4 = pd.Timestamp(year=year, month=1, day=4)
-    week1 = jan4 - pd.Timedelta(days=(jan4.dayofweek + 1) % 7)
+    week1 = jan4 - pd.Timedelta(days=(jan4.day_of_week + 1) % 7)
     return year, (start - week1).days // 7 + 1
 
 
@@ -167,7 +167,7 @@ def puerto_rico_weekly():
 def case_plot(c: pd.DataFrame, path: Path):
     ink, ink2, grid, grey = "#0b0b0b", "#52514e", "#e6e5e0", "#a3a29c"
     blue, orange = "#2a78d6", "#eb6834"
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.edgecolor": grid,
+    plt.rcParams.update({"font.family": "DejaVu Sans", "text.hinting": "default", "font.size": 9, "axes.edgecolor": grid,
                          "axes.labelcolor": ink2, "xtick.color": ink2, "ytick.color": ink2})
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 7.6), gridspec_kw={"height_ratios": [1, 1.05], "hspace": 0.55})
     fig.patch.set_facecolor("white")
@@ -268,7 +268,7 @@ def main():
         "ranges": rng,
         "units": "time in days, rates per day, populations in persons, fractions for phi, s0, kappa and eta",
         "source": "parameters/parameters.csv",
-    }, indent=2, ensure_ascii=False) + "\n")
+    }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     case_plot(cases, FIG / "cases_san_juan.png")
     write_checks(cases, wx, daily, demo, age, overlap, prw, pr_annual, par)
@@ -412,7 +412,7 @@ def write_checks(c, wx, daily, demo, age, overlap, prw, pr_annual, par):
          + f". Epi year 2024 has {int((p24.opendengue_flag != '').sum())}.")
     line(True, "Case definition 'Total' (suspected and confirmed as reported to PAHO), island-wide, no serotype, no "
                "municipality.")
-    (CHECKS / "data_checks.md").write_text("\n".join(L) + "\n")
+    (CHECKS / "data_checks.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
 def write_manifest():
